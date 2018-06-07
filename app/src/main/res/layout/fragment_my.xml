@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="my"
+            type="com.gengms.simplearch.data.db.entity.UserEntity"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/user_detail"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_portrait"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:id="@+id/prompt_portrait"
+            style="@style/TextColumnTitleStyle"
+            android:text="头像"
+            app:layout_constraintTop_toTopOf="@+id/iv_portrait"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_portrait"/>
+
+        <View
+            style="@style/DivideLineStyle"
+            app:layout_constraintTop_toBottomOf="@+id/iv_portrait"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/prompt_name"
+            style="@style/TextColumnTitleStyle"
+            android:text="昵称"
+            app:layout_constraintTop_toBottomOf="@+id/iv_portrait"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/TextColumnContentStyle"
+            android:text="@{my.name}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/prompt_name"
+            app:layout_constraintBottom_toBottomOf="@+id/prompt_name"/>
+
+        <View
+            style="@style/DivideLineStyle"
+            app:layout_constraintTop_toBottomOf="@+id/prompt_name"/>
+
+        <TextView
+            android:id="@+id/prompt_phone"
+            style="@style/TextColumnTitleStyle"
+            android:text="手机号"
+            app:layout_constraintTop_toBottomOf="@+id/prompt_name"/>
+
+        <TextView
+            android:id="@+id/tv_phone"
+            style="@style/TextColumnContentStyle"
+            android:text="@{my.phone}"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/prompt_phone"
+            app:layout_constraintBottom_toBottomOf="@+id/prompt_phone"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
